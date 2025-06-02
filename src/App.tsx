@@ -18,7 +18,11 @@ function App() {
       <Container>
         <Card>
           <FormComponent onSubmit={handleSubmit} />
-          {birthData && <Calculator day={birthData.day} month={birthData.month} year={birthData.year} />}
+          <Calculator 
+            day={birthData?.day} 
+            month={birthData?.month} 
+            year={birthData?.year} 
+          />
         </Card>
       </Container>
     </div>
