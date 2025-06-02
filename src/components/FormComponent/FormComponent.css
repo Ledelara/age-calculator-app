@@ -1,0 +1,83 @@
+.form-component {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputs-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group:has(.error-message) input {
+  border-color: red;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.form-group input {
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  max-width: 120px;
+}
+
+.form-group input::placeholder {
+  color: #999;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+span.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 0.5rem;
+}
+
+.submit-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.submit-wrapper::before,
+.submit-wrapper::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
+  position: relative;
+  top: 0;
+}
+
+.submit-button {
+  padding: 1em;
+  background-color: var(--purple-500);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
