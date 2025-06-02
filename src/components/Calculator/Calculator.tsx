@@ -1,12 +1,14 @@
+import './Calculator.css';
+
 interface CalculatorProps {
-  day: number;
-  month: number;
-  year: number;
+  day?: number;
+  month?: number;
+  year?: number;
 }
 
 export default function Calculator({ day, month, year }: CalculatorProps) {
   const calculateAge = () => {
-    const birthDate = new Date(year, month - 1, day);
+    const birthDate = new Date(Number(year), Number(month) - 1, day);
     const today = new Date();
 
     let ageYears = today.getFullYear() - birthDate.getFullYear();
@@ -30,13 +32,21 @@ export default function Calculator({ day, month, year }: CalculatorProps) {
   const age = calculateAge();
 
   return (
-    <div>
-      <h2>Your Age:</h2>
-      <p>
-        {age.years} {age.years === 1 ? "year" : "years"},{" "}
-        {age.months} {age.months === 1 ? "month" : "months"},{" "}
-        {age.days} {age.days === 1 ? "day" : "days"} old
-      </p>
+    <div className="calculator-container">
+      <div className="calculator-label">
+        <p className="calculator-text">{age.years ? age.years : '--'}</p>
+        <h1 className="calculator-header">years</h1>
+      </div>
+
+      <div className="calculator-label">
+        <p className="calculator-text">{age.months ? age.months : '--'}</p>
+        <h1 className="calculator-header">months</h1>
+      </div>
+
+      <div className="calculator-label">
+        <p className="calculator-text">{age.days ? age.days : '--'}</p>
+        <h1 className="calculator-header">days</h1>
+      </div>
     </div>
   );
 }
