@@ -7,6 +7,7 @@ const Container = styled.div`
   align-items: center;
   margin-top: 60px;
   width: 100%;
+  height: 80vh;
   border-radius: 15px;
 
   @media (max-width: 768px) {
